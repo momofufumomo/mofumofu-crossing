@@ -14,6 +14,8 @@
     <script defer src="/__/firebase/7.15.0/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <style media="screen">
@@ -37,6 +39,7 @@
     </style>
   </head>
   <body>
+    <div id="mofu-cro">
     <div id="main-area"style="text-align: center;">
 
       <h1 class="h2">Welcome もふの森</h1>
@@ -53,30 +56,41 @@
       <hr>
       <h2 class="h3" style="text-align: center;">あまりレシピ一覧</h2>
       <ul class="list-group" style="max-width: 400px;">
-        <li class="list-group-item">たけのこランプ２こ</li>
-        <li class="list-group-item">ガーデンベンチ</li>
-        <li class="list-group-item">つみきテーブル</li>
-        <li class="list-group-item">たけのステッキ</li>
-        <li class="list-group-item">まるたのスツール</li>
-        <li class="list-group-item">かめ</li>
-        <li class="list-group-item">スワッグ</li>
-        <li class="list-group-item">チューリップのビックリばこ</li>
-        <li class="list-group-item">いぬごや</li>
-        <li class="list-group-item">ジャングルのかべがみ２こ</li>
-        <li class="list-group-item">きんのアロワナ</li>
-        <li class="list-group-item">マネーなゆか２こ</li>
-        <li class="list-group-item">こしみの</li>
-        <li class="list-group-item">パンジーのテーブル</li>
-        <li class="list-group-item">みの</li>
-        <li class="list-group-item">ひくいにわいし</li>
-        <li class="list-group-item">かせきのドアプレート</li>
-        <li class="list-group-item">パンジーのかんむり・パープル</li>
-        <li class="list-group-item">ケトルベル</li>
-        <li class="list-group-item">おうごんのしょくだい</li>
-        <li class="list-group-item">もくせいのほんだな</li>
+        <li class="list-group-item" v-for="item in items">
+          {{ item.name }}
+        </li>
       </ul>
     </div>
+  </div>
     <script>
+      var mofuCro = new Vue({
+  el: '#mofu-cro',
+  data: {
+    items: [
+      { name: 'たけのこランプ', count: 2 },
+      { name: 'ガーデンベンチ', count: 1 },
+      { name: 'つみきテーブル', count: 1 },
+      { name: 'たけのステッキ', count: 1 },
+      { name: 'まるたのスツール', count: 1 },
+      { name: 'かめ', count: 1 },
+      { name: 'スワッグ', count: 1 },
+      { name: 'チューリップのビックリばこ', count: 1 },
+      { name: 'いぬごや', count: 1 },
+      { name: 'ジャングルのかべがみ', count: 2 },
+      { name: 'きんのアロワナ', count: 1 },
+      { name: 'マネーなゆか', count: 2 },
+      { name: 'こしみの', count: 1 },
+      { name: 'パンジーのテーブル', count: 1 },
+      { name: 'みの', count: 1 },
+      { name: 'ひくいにわいし', count: 1 },
+      { name: 'かせきのドアプレート', count: 1 },
+      { name: 'パンジーのかんむり・パープル', count: 1 },
+      { name: 'ケトルベル', count: 1 },
+      { name: 'おうごんのしょくだい', count: 1 },
+      { name: 'もくせいのほんだな', count: 1 },
+    ]
+  }
+})
     </script>
   </body>
 </html>
