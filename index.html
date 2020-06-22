@@ -54,43 +54,30 @@
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <hr>
+      <p>レシピ一覧はこちらからお借りいたしました。ありがとうございます！</p>
+      <p>
+        <a href="https://docs.google.com/spreadsheets/d/1V-nrS2NeSM22VNkV7w2Xl2pyrn7Uq0A-YwrYhWVI3Bg/edit#gid=0">
+          【DIY所持チェッカー Ver.1.0】
+        </a>
+      </p>
+      <hr>
+
       <h2 class="h3" style="text-align: center;">あまりレシピ一覧</h2>
       <ul class="list-group" style="max-width: 400px;">
-        <li class="list-group-item" v-for="item in items">
+        <li class="list-group-item" v-for="item in hasItems">
           {{ item.name }}
         </li>
       </ul>
     </div>
   </div>
-    <script>
-      var mofuCro = new Vue({
-  el: '#mofu-cro',
-  data: {
-    items: [
-      { name: 'たけのこランプ', count: 2 },
-      { name: 'ガーデンベンチ', count: 1 },
-      { name: 'つみきテーブル', count: 1 },
-      { name: 'たけのステッキ', count: 1 },
-      { name: 'まるたのスツール', count: 1 },
-      { name: 'かめ', count: 1 },
-      { name: 'スワッグ', count: 1 },
-      { name: 'チューリップのビックリばこ', count: 1 },
-      { name: 'いぬごや', count: 1 },
-      { name: 'ジャングルのかべがみ', count: 2 },
-      { name: 'きんのアロワナ', count: 1 },
-      { name: 'マネーなゆか', count: 2 },
-      { name: 'こしみの', count: 1 },
-      { name: 'パンジーのテーブル', count: 1 },
-      { name: 'みの', count: 1 },
-      { name: 'ひくいにわいし', count: 1 },
-      { name: 'かせきのドアプレート', count: 1 },
-      { name: 'パンジーのかんむり・パープル', count: 1 },
-      { name: 'ケトルベル', count: 1 },
-      { name: 'おうごんのしょくだい', count: 1 },
-      { name: 'もくせいのほんだな', count: 1 },
-    ]
-  }
-})
+  <script type="text/javascript" src="items.js"></script>
+  <script>
+    var mofuCro = new Vue({
+      el: '#mofu-cro',
+      data: {
+        hasItems
+      }
+    })
     </script>
   </body>
 </html>
