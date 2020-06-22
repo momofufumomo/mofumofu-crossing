@@ -64,7 +64,16 @@
 
       <h2 class="h3" style="text-align: center;">あまりレシピ一覧</h2>
       <ul class="list-group" style="max-width: 400px;">
-        <li class="list-group-item" v-for="item in hasItems">
+        <li class="list-group-item" v-for="item in MasterItems">
+          {{ item.name }}   {{item.doubleNumber}}
+        </li>
+      </ul>
+
+      <hr>
+
+      <h2 class="h3" style="text-align: center;">覚えていないレシピ一覧</h2>
+      <ul class="list-group" style="max-width: 400px;">
+        <li class="list-group-item" v-for="item in WantItems">
           {{ item.name }}
         </li>
       </ul>
@@ -75,7 +84,16 @@
     var mofuCro = new Vue({
       el: '#mofu-cro',
       data: {
-        hasItems
+        hasItems,
+        allItems
+      },
+      computed: {
+        MasterItems () {
+          return this.allItems.filter(allItems => allItems.double === 1)
+        },
+        WantItems () {
+          return this.allItems.filter(allItems => allItems.mastery === 2)
+        },
       }
     })
     </script>
