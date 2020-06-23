@@ -1,0 +1,23 @@
+{
+  "name": "mofumofu-crossing",
+  "version": "1.0.0",
+  "description": "あつ森のレシピとかを置いとくページをつくりたい！",
+  "main": "items.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momofufumomo/mofumofu-crossing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/momofufumomo/mofumofu-crossing/issues"
+  },
+  "homepage": "https://github.com/momofufumomo/mofumofu-crossing#readme",
+  "devDependencies": {
+    "vue-smooth-scroll": "^1.0.13"
+  }
+}
