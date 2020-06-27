@@ -17,8 +17,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <style media="screen">
       #main-area{
         margin:50px;
@@ -38,6 +36,10 @@
         width:80%;
       }
     </style>
+
+  <!-- bootstrap-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
     <div id="mofu-cro">
@@ -70,30 +72,40 @@
 
       <h2 id="master-items" class="h3" style="text-align: center;">あまりレシピ一覧</h2>
       <div>
-        <p>絞り込み：</p>
-        <input v-model="vmMasterItems">
+        <p>絞り込み：<input v-model="vmMasterItems"></p>
       </div>
-      <ul class="list-group" style="max-width: 400px;">
-        <li class="list-group-item" v-for="item in MasterItems">
-          {{ item.name }}   {{item.doubleNumber}}
-        </li>
-      </ul>
+
+      <div class="table-responsive" style="max-width: 400px; margin:auto;">
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr><th>なまえ</th><th>あまり</th></tr>
+          </thead>
+          <tr v-for="item in MasterItems"><td>{{ item.name }}</td><td>{{item.doubleNumber}}</td></tr>
+        </table>
+      </div>
 
       <hr>
 
       <h2 id="want-items" class="h3" style="text-align: center;">覚えていないレシピ一覧</h2>
       <div>
-        <p>絞り込み：</p>
-        <input v-model="vmWantItems">
+        <p>絞り込み：<input v-model="vmWantItems"></p>
       </div>
-      <ul class="list-group" style="max-width: 400px;">
-        <li class="list-group-item" v-for="item in WantItems">
-          {{ item.name }}
-        </li>
-      </ul>
+      <div class="table-responsive" style="max-width: 400px; margin:auto;">
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr><th>なまえ</th></tr>
+          </thead>
+          <tr v-for="item in WantItems"><td>{{ item.name }}</td></tr>
+        </table>
+      </div>
     </div>
     </div>
   </body>
+  <!-- bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script type="text/javascript" src="items.js"></script>
   <script>
